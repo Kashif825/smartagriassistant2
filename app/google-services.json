@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "721480510260",
+    "project_id": "smart-agri-assistant-1c8f2",
+    "storage_bucket": "smart-agri-assistant-1c8f2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721480510260:android:904f756f25aa3a772d1361",
+        "android_client_info": {
+          "package_name": "com.kashifshahazad.smartagriassistant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOU3Fdzr6lITlPqXiEDwNPJKXCsIaSaS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
