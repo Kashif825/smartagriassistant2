@@ -62,18 +62,29 @@
             android:id="@+id/bottomNavigation"
             android:layout_width="0dp"
             android:layout_height="60dp"
-            app:itemPaddingTop="10dp"
-            app:itemPaddingBottom="10dp"
             android:layout_marginBottom="1dp"
-            app:menu="@menu/activity_menu_bottom_nav"
-            app:labelVisibilityMode="labeled"
-            app:itemTextColor="@color/bottom_nav_color"
-            app:itemIconTint="@color/bottom_nav_color"
             android:background="@color/theme_color"
             app:itemActiveIndicatorStyle="@style/ActiveIndicator"
+            app:itemIconTint="@color/bottom_nav_color"
+            app:itemPaddingBottom="10dp"
+            app:itemPaddingTop="10dp"
+            app:itemTextColor="@color/bottom_nav_color"
+            app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/activity_menu_bottom_nav" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/baseline_add_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView

@@ -10,9 +10,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import android.view.View.OnClickListener
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -25,6 +23,7 @@ import androidx.navigation.ui.setupWithNavController
 
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
 import com.google.firebase.messaging.FirebaseMessaging
@@ -65,6 +64,10 @@ class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListener {
             R.id.bottomNavigation)
         bottomNavigationView.setupWithNavController(navHostFragment.navController)
 
+        findViewById<FloatingActionButton>(R.id.addNew).setOnClickListener(){
+             startActivity(Intent(this, add_crop_issue::class.java))
+        }
+
         val viewModel = MainViewModel()
 
         lifecycleScope.launch {
@@ -73,7 +76,6 @@ class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListener {
                     startActivity(Intent(this@MainActivity,LoginActivity::class.java))
                     finish()
                 }
-                //TODO: display user data in nav drawer
             }
         }
 
@@ -82,9 +84,13 @@ class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListener {
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.item_logout) {
+            val viewModel = AuthViewModel()
+            viewModel.logout()
+            startActivity(Intent(this, LoginActivity::class.java))
+
 
         } else if (item.itemId == R.id.item_about_us) {
-
+          startActivity(Intent(this, aboutUs::class.java))
         }
         return true
     }
