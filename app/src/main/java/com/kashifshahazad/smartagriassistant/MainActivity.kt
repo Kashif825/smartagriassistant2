@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity(), OnNavigationItemSelectedListener {
 
 
         } else if (item.itemId == R.id.item_about_us) {
-          startActivity(Intent(this, aboutUs::class.java))
+          startActivity(Intent(this, About_us::class.java))
         }
         return true
     }
